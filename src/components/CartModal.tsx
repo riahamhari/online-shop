@@ -8,6 +8,10 @@ interface CartModalProps {
   actions: React.ReactNode;
 }
 
+// Define and export the ref type
+export interface CartModalRef {
+  open: () => void;
+}
 
 const CartModal = forwardRef(function Modal({ title, actions }:CartModalProps, ref) {
   const dialog = useRef<HTMLDialogElement>(null);

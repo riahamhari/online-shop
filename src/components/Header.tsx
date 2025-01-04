@@ -1,6 +1,6 @@
 import { useRef } from "react";
 
-import CartModal, { CartModalRef } from "./CartModal"; 
+import CartModal, { CartModalRef } from "./CartModal.tsx"; 
 import { CartContext } from "../store/shopping-cart-context.tsx";
 import { useContext } from "react";
 
@@ -12,6 +12,7 @@ export default function Header() {
 
   function handleOpenCartClick() {
     if(modal.current){
+      
       modal.current.open();
     }
  

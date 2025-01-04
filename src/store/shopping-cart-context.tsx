@@ -98,6 +98,8 @@ export default function CartContextProvider({children}:CartContextProviderProps)
     updateItemQuantity: handleUpdateCartItemQuantity,
   };
 
+
+
   return (
     <CartContext.Provider value={ctxValue}>
       {children}
