@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Children } from "react";
 
 import { useContext } from "react";
 import { CartContext } from "../store/shopping-cart-context";
@@ -12,8 +12,13 @@ type ProductProps = {
   description: string;
 };
 
-
-export default function Product({ id, image, title, price, description }:ProductProps) {
+export default function Product({
+  id,
+  image,
+  title,
+  price,
+  description,
+}: ProductProps) {
   const { addItemToCart } = useContext(CartContext);
   return (
     <article className="product">
