@@ -31,6 +31,7 @@ type CartContextProviderProps = {
   children: ReactNode; // Explicitly type children as ReactNode
 };
 
+// the reduce function is defined outside of the component function as it should not be recreated whenever the componenet executes. It also doesnt need access to props
 function shoppingCartReducer(state: ShoppingCartState, action: any) {
   if (action.type === "ADD_ITEM") {
     const updatedItems = [...state.items];
@@ -120,6 +121,7 @@ export default function CartContextProvider({
     });
   }
 
+  //  is the actual value that is provided to the context consumers. It contains the current state and the functions to modify that state.
   const ctxValue: CartContextType = {
     items: shoppingCartState.items,
     addItemToCart: handleAddItemToCart,
